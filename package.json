@@ -1,0 +1,50 @@
+{
+  "name": "selector-nest-combinators",
+  "version": "1.0.0",
+  "description": "Require or disallow nesting of combinators in selectors",
+  "main": "index.js",
+  "keywords": [
+    "code",
+    "quality",
+    "style",
+    "lint",
+    "linter",
+    "stylelint",
+    "validate",
+    "code style",
+    "strict",
+    "check",
+    "checker",
+    "verify",
+    "enforce",
+    "hint",
+    "media",
+    "media query",
+    "nest",
+    "nesting",
+    "nested"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiforks/selector-nest-combinators"
+  },
+  "author": "<ks.kifor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kiforks/selector-nest-combinators/issues"
+  },
+  "homepage": "https://github.com/kiforks/selector-nest-combinators#readme",
+  "scripts": {
+    "test": "npx stylelint **/*.scss",
+    "fix": "npx stylelint **/*.scss --fix"
+  },
+  "devDependencies": {
+    "postcss-scss": "^4.0.4",
+    "stylelint": "^14.16.0",
+    "stylelint-scss": "^4.1.0"
+  },
+  "dependencies": {
+    "is-plain-object": "^5.0.0",
+    "postcss-selector-parser": "^6.0.11"
+  }
+}
