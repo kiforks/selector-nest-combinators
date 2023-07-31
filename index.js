@@ -1,17 +1,19 @@
 'use strict';
 
 const { utils } = require('stylelint');
-const namespace = require('../../utils/namespace');
-const parseSelector = require('../../utils/parseSelector');
-const ruleUrl = require('../../utils/ruleUrl');
+const parseSelector = require('./utils/parseSelector');
+const ruleUrl = require('./utils/ruleUrl');
+const ruleMessages = require('./utils/ruleMessages');
 
-const ruleName = namespace('kiforks/selector-nest-combinators');
+const ruleName = 'kiforks/selector-nest-combinators';
+const stylelint = require('stylelint');
 
-const messages = utils.ruleMessages(ruleName, {
+const messages = ruleMessages(ruleName, {
 	expectedInterpolation: `Expected interpolation to be in a nested form`,
 	expected: (combinator, type) => `Expected combinator "${combinator}" of type "${type}" to be in a nested form`,
 	rejected: `Unexpected nesting found in selector`,
 });
+const validateOptions = require('./utils/validateOptions');
 
 const meta = {
 	url: ruleUrl(ruleName),
@@ -19,7 +21,7 @@ const meta = {
 
 module.exports = stylelint.createPlugin(ruleName, expectation => {
 	return (root, result) => {
-		const validOptions = utils.validateOptions(result, ruleName, {
+		const validOptions = validateOptions(result, ruleName, {
 			actual: expectation,
 			possible: ['always', 'never'],
 		});
@@ -46,6 +48,10 @@ module.exports = stylelint.createPlugin(ruleName, expectation => {
 		const interpolationRe = /#{.+?}$/;
 
 		root.walkRules(rule => {
+			if (rule.selector.includes(':host')) {
+				return;
+			}
+
 			if (rule.parent && rule.parent.type === 'atrule' && rule.parent.name === 'keyframes') {
 				return;
 			}
