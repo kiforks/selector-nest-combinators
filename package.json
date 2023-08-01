@@ -26,14 +26,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kiforks/selector-nest-combinators"
+    "url": "git+https://github.com/tc/selector-nest-combinators"
   },
   "author": "<ks.kifor@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kiforks/selector-nest-combinators/issues"
+    "url": "https://github.com/tc/selector-nest-combinators/issues"
   },
-  "homepage": "https://github.com/kiforks/selector-nest-combinators#readme",
+  "homepage": "https://github.com/tc/selector-nest-combinators#readme",
   "scripts": {
     "test": "npx stylelint **/*.scss",
     "fix": "npx stylelint **/*.scss --fix"

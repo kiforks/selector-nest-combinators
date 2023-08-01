@@ -1,4 +1,4 @@
-# kiforks/selector-nest-combinators
+# tc/selector-nest-combinators
 
 Require or disallow nesting of combinators in selectors
 
