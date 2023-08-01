@@ -5,7 +5,7 @@ const parseSelector = require('./utils/parseSelector');
 const ruleUrl = require('./utils/ruleUrl');
 const ruleMessages = require('./utils/ruleMessages');
 
-const ruleName = 'kiforks/selector-nest-combinators';
+const ruleName = 'tc/selector-nest-combinators';
 const stylelint = require('stylelint');
 
 const messages = ruleMessages(ruleName, {
