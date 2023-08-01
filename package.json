@@ -1,6 +1,6 @@
 {
   "name": "selector-nest-combinators",
-  "version": "1.0.35",
+  "version": "1.0.4",
   "description": "Require or disallow nesting of combinators in selectors",
   "main": "index.js",
   "keywords": [
